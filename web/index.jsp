@@ -6,6 +6,7 @@
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="utf-8">
@@ -22,7 +23,6 @@
       position: absolute;
       font-family: 'Gamja Flower';
     }
-
     div.title{
       width: 100%;
       height: 80px;
@@ -50,7 +50,6 @@
       padding: 20px 10px;
 
     }
-
     div.main{
 
       width: 1200px;
@@ -64,13 +63,11 @@
 </head>
 <%
   String mainPage="layout/main.jsp";
-
   //url을 통해서 main값을 읽어서 메인페이지에 출력을한다
   if(request.getParameter("main")!=null)
   {
     mainPage=request.getParameter("main");
   }
-
   String root=request.getContextPath();
 %>
 <body>
@@ -82,9 +79,7 @@
   <jsp:include page="layout/menu.jsp"/>
 </div>
 
-<div class="layout info">
-  <jsp:include page="layout/info.jsp"/>
-</div>
+
 
 <div class="layout main">
   <jsp:include page="<%=mainPage %>"/>
